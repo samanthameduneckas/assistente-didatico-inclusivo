@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Assistente Inclusivo - GenAI</title>
+    <style>
+        :root { --primary: #ea1d2c; --bg: #f4f7f6; --card-bg: #ffffff; --text: #2c3e50; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg); color: var(--text); padding: 20px; display: flex; justify-content: center; }
+        .container { max-width: 600px; width: 100%; background: var(--card-bg); padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h1 { font-size: 24px; color: var(--primary); margin-bottom: 5px; text-align: center; }
+        .subtitle { text-align: center; font-size: 13px; color: #7f8c8d; margin-bottom: 25px; }
+        label { font-weight: 600; display: block; margin-bottom: 8px; }
+        textarea, select { width: 100%; padding: 12px; border: 2px solid #bdc3c7; border-radius: 8px; box-sizing: border-box; font-size: 15px; margin-bottom: 20px; }
+        button { background-color: var(--primary); color: white; border: none; padding: 14px; width: 100%; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; }
+        button:hover { background-color: #c81422; }
+        .result-box { margin-top: 25px; padding: 20px; background-color: #f9f9f9; border-left: 5px solid var(--primary); border-radius: 4px; min-height: 100px; white-space: pre-wrap; font-size: 15px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Assistente Didático Inclusivo 🧠</h1>
+    <div class="subtitle">Engenharia de Software Aplicada à Educação Especial</div>
+
+    <label for="textoOriginal">Conteúdo Didático Original:</label>
+    <textarea id="textoOriginal" rows="5" placeholder="Cole aqui o texto da aula...">Lucas e Sofia estavam brincando no quintal. De repente, o gato da vizinha, o Faísca, passou correndo e derrubou a caixa de brinquedos. O carrinho azul rolou para baixo do sofá, a boneca de pano sumiu no meio das plantas e a bola colorida pulou o muro.</textarea>
+
+    <label for="necessidade">Necessidade de Adaptação:</label>
+    <select id="necessidade">
+        <option value="TEA">Foco em TEA (Linguagem direta e tópicos estruturados)</option>
+        <option value="TDAH">Foco em TDAH (Textos curtos e metas claras)</option>
+    </select>
+
+    <button onclick="adaptarConteudo()">Gerar Material Adaptado com GenAI</button>
+
+    <label style="margin-top: 25px;">Resultado Adaptado:</label>
+    <div id="resultado" class="result-box">O material adaptado aparecerá aqui após o clique...</div>
+</div>
+
+<script>
+function adaptarConteudo() {
+    const necessidade = document.getElementById('necessidade').value;
+    const campoResultado = document.getElementById('resultado');
+    
+    campoResultado.innerHTML = '<span style="color: #ea1d2c; font-weight: bold;">[IA Local] Estruturando adaptação neuroeducativa...</span>';
+    
+    setTimeout(() => {
+        if (necessidade === "TEA") {
+            campoResultado.innerHTML = `📌 **HISTÓRIA ADAPTADA (Foco em TEA)**\n\n• **Personagens:** Lucas e Sofia.\n• **Onde estavam:** No quintal.\n• **O que aconteceu:** O gato Faísca derrubou a caixa de brinquedos.\n\n⚠️ **Onde estão os brinquedos agora?**\n- Carrinho azul ➡️ Debaixo do sofá.\n- Boneca de pano ➡️ No meio das plantas.\n- Bola colorida ➡️ Pulou o muro.`;
+        } else {
+            campoResultado.innerHTML = `⚡ **HISTÓRIA ADAPTADA (Foco em TDAH)**\n\nLucas e Sofia estavam brincando no quintal. \n\nDe repente, o gato Faísca passou correndo e **derrubou a caixa de brinquedos!**\n\n🔍 **Vamos encontrar os brinquedos desaparecidos?**\n1. O carrinho azul rolou para baixo do sofá.\n2. A boneca de pano sumiu no meio das plantas.\n3. A bola colorida pulou o muro.\n\n*Pergunta de atenção: Qual era a cor do carrinho que sumiu?*`;
+        }
+    }, 800);
+}
+</script>
+</body>
+</html>

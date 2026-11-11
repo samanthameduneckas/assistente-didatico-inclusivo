@@ -22,7 +22,7 @@
     <div class="subtitle">Engenharia de Software Aplicada à Educação Especial</div>
 
     <label for="textoOriginal">Conteúdo Didático Original:</label>
-    <textarea id="textoOriginal" rows="5" placeholder="Cole aqui o texto da aula...">Lucas e Sofia estavam brincando no quintal. De repente, o gato da vizinha, o Faísca, passou correndo e derrubou a caixa de brinquedos. O carrinho azul rolou para baixo do sofá, a boneca de pano sumiu no meio das plantas e a bola colorida pulou o muro.</textarea>
+    <textarea id="textoOriginal" rows="5" placeholder="Cole aqui o texto da aula...">Lucas e Sofia estavam brincando no quintal. De repente, o gato da vizinha, o Faísca, passou correndo e derrubou a caixa de brinquedos. O carrinho azul rolou para baixo do sofá, a boneca de pano sumiu no meio das plantas e a bola rolou até a piscina </textarea>
 
     <label for="necessidade">Necessidade de Adaptação:</label>
     <select id="necessidade">
@@ -45,7 +45,7 @@ function adaptarConteudo() {
     
     setTimeout(() => {
         if (necessidade === "TEA") {
-            campoResultado.innerHTML = `📌 **HISTÓRIA ADAPTADA (Foco em TEA)**\n\n• **Personagens:** Lucas e Sofia.\n• **Onde estavam:** No quintal.\n• **O que aconteceu:** O gato Faísca derrubou a caixa de brinquedos.\n\n⚠️ **Onde estão os brinquedos agora?**\n- Carrinho azul ➡️ Debaixo do sofá.\n- Boneca de pano ➡️ No meio das plantas.\n- Bola colorida ➡️ Pulou o muro.`;
+            campoResultado.innerHTML = `📌 **HISTÓRIA ADAPTADA (Foco em TEA)**\n\n• **Personagens:** Lucas e Sofia.\n• **Onde estavam:** No quintal.\n• **O que aconteceu:** O gato Faísca derrubou a caixa de brinquedos.\n\n⚠️ **Onde estão os brinquedos agora?**\n- Carrinho azul ➡️ Debaixo do sofá.\n- Boneca de pano ➡️ No meio das plantas.\n- Bola ➡️ rolou até a piscina.`;
         } else {
             campoResultado.innerHTML = `⚡ **HISTÓRIA ADAPTADA (Foco em TDAH)**\n\nLucas e Sofia estavam brincando no quintal. \n\nDe repente, o gato Faísca passou correndo e **derrubou a caixa de brinquedos!**\n\n🔍 **Vamos encontrar os brinquedos desaparecidos?**\n1. O carrinho azul rolou para baixo do sofá.\n2. A boneca de pano sumiu no meio das plantas.\n3. A bola colorida pulou o muro.\n\n*Pergunta de atenção: Qual era a cor do carrinho que sumiu?*`;
         }
